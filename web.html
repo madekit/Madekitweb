@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madekit</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <style >
+      
+
+.menu {
+    /* Existing styles */
+    backdrop-filter: blur(8px);
+    background-color: rgba(24, 24, 24, 0.8); /* Adjust the alpha value for transparency */
+}
+
+
+      
+       *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    --color1: #FFF ;
+    --color2: #181818 ;
+    background-color : #008080;
+}
+.nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    background-color: var(--color2);
+    padding: 12px 20px;
+}
+
+.menu {display: flex;}
+.menu li {padding-left: 30px;}
+.menu li a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color1);
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    text-transform: none;
+}
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color1);
+    transition: 0.15s ease-in-out;
+}
+.menu li a:hover:after {width: 100%;}
+.open-menu , .close-menu {
+    position: absolute;
+    color: var(--color1);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+.open-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+.close-menu {
+    top: 20px;
+    right: 20px;
+}
+#check {display: none;}
+@media(max-width: 610px){
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color2);
+        transition: all 0.3s ease-in-out;
+    }
+    .menu li {margin-top: 40px;}
+    .menu li a {padding: 10px;}
+    .open-menu , .close-menu {display: block;}
+    #check:checked ~ .menu {right: 0;}
+}
+.menu {
+    backdrop-filter: blur(4px);
+    background-color: rgba(24, 24, 24, 0.8);
+}
+
+form2 {
+  display: flex;
+  align-items: center;
+}
+
+input[type="text2"] {
+  width: 50%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  
+}
+
+button2 {
+  width: 10%;
+  padding: 6px 8px;
+  background-color: #181818;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button2:hover {
+  background-color: #181818;
+}
+
+input[type="text2"] + button2 {
+  margin-left: 0px;
+}
+
+button2 i {
+  font-size: 16px;
+}
+
+
+form {
+
+    width: 50%;
+
+    margin: auto;
+
+    padding: 20px;
+
+    background-color: #fff;
+
+    border-radius: 5px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    margin-top: 100px;
+
+  }
+
+ label2 {
+
+		color: #333333;
+
+		font-weight: bold;
+
+		display: block;
+
+		margin-bottom: 10px;
+
+	}
+ 
+  input[type="number"],
+
+	input[type="text"] {
+
+		border: 1px solid #dddddd;
+
+		border-radius: 5px;
+
+		padding: 10px;
+
+		margin-bottom: 20px;
+
+		width: 100%;
+
+		box-sizing: border-box;
+
+		font-size: 16px;
+
+		color: #333333;
+
+		background-color: #f9f9f9;
+
+		box-shadow: none;
+
+		-webkit-appearance: none;
+
+	}
+  
+  button {
+
+		background-color: #008080;
+
+		color: #ffffff;
+
+		border: none;
+
+		border-radius: 5px;
+
+		padding: 10px 20px;
+
+		font-size: 16px;
+
+		cursor: pointer;
+		width : 100%;
+
+		transition: background-color 0.3s ease;
+
+		box-shadow : 0px 0px 0px rgba(0,0,0,0.0) ;
+
+	}
+	button:hover {
+
+		background-color: #A80F1F;
+
+	}
+	input[type="number"]:focus,
+
+	input[type="text"]:focus {
+
+		outline: none;
+
+		border-color: #4CAF50;
+
+	}
+	input[readonly] {
+
+		background-color: #eeeeee;
+
+	}
+	
+	form {
+    
+}
+
+	
+   </style> 
+   <meta name="theme-color" content="#008080">
+   
+    </head>
+<body>
+    <header>
+    <nav>
+        <ul class='nav-bar'>
+            <li><h1 style="color: #fff;">
+                MADE kit</h1></li>
+    
+   
+            <input type='checkbox' id='check' />
+            <span class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="">Products</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+            </span>
+            <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+            </ul>
+   
+    
+    <script>
+  function performSearch() {
+    const query = document.getElementById('searchInput').value;
+    const searchUrl = '/search?query=' + encodeURIComponent(query);
+    window.location.href = searchUrl;
+  }
+</script>
+    </header>
+    
+    <br>
+    <form style = "margin-bottom: 20px;">
+
+		<label2 for="number">Number:</label2>
+
+		<input id="number" name="number" placeholder="Enter a number" type="number" />
+
+		<label2 for="percent">Percentage:</label2>
+		
+		<input id="percent" name="percent" placeholder="Enter a percentage" type="number" />
+
+		<button onclick="calculatePercentage()" type="button">Calculate</button>
+
+		<label2 for="result">Result:</label2>
+
+		<input id="result" name="result" readonly="" type="number" />
+</form>
+  
+   <form>
+<label2 for="number2">Number:</label2>
+		<input id="number2" name="number2" placeholder="Enter a number" type="number" />
+		<label2 for="total">Total:</label2>
+
+		<input id="total" name="total" placeholder="Enter total number" type="number" />
+
+		<button onclick="calculatePercentage2()" type="button">Calculate</button>
+
+		<label2 for="result2">Result:</label2>
+
+		<input id="result2" name="result2" readonly="" type="text" />
+		</form> 
+		<script>
+function calculatePercentage() {
+	var number = document.getElementById("number").value;
+		var percent = document.getElementById("percent").value;
+		var result = document.getElementById("result");
+		if (number && percent) {
+
+			var percentage = (number * percent) / 100;
+
+			result.value = percentage;
+
+		} else if (number) {
+
+			resultvalue = number + "%";
+
+		} else if (percent) {
+
+			result.value = percent / 100;
+
+		} else {
+
+			alert("Please enter a number or percentage.");
+
+		}
+
+	}
+
+	function calculatePercentage2() {
+
+		var number2 = document.getElementById("number2").value;
+		var total = document.getElementById("total").value;
+
+		var result2 = (number2 / total) * 100;
+
+		document.getElementById("result2").value = result2.toFixed(2) + "%";
+
+	}
+	</script>
+
+  <footer class="footer" style = "margin-top:50px">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>company</h4>
+  	 			<ul>
+  	 				<li><a href="#">about us</a></li>
+  	 				<li><a href="#">our services</a></li>
+  	 				<li><a href="#">privacy policy</a></li>
+  	 				<li><a href="#">affiliate program</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>get help</h4>
+  	 			<ul>
+  	 				<li><a href="#">FAQ</a></li>
+  	 				<li><a href="#">shipping</a></li>
+  	 				<li><a href="#">returns</a></li>
+  	 				<li><a href="#">order status</a></li>
+  	 				<li><a href="#">payment options</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>online shop</h4>
+  	 			<ul>
+  	 				<li><a href="#">watch</a></li>
+  	 				<li><a href="#">bag</a></li>
+  	 				<li><a href="#">shoes</a></li>
+  	 				<li><a href="#">dress</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>follow us</h4>
+  	 			<div class="social-links">
+  	 				<a href="#"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="#"><i class="fab fa-twitter"></i></a>
+  	 				<a href="#"><i class="fab fa-instagram"></i></a>
+  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  </footer>
+<style>
+    
+    body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+    
+    .footer{
+	background-color: #181818;
+    padding: 70px 0;
+    bottom : 0px ;
+    
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #A80F1F;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+ul{
+	list-style: none;
+}
+
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+
+@media(max-width: 574px){
+  .footer-col{
+    width: 65%;
+}
+}
+
+
+
+</style>
+</body>
+</html>
